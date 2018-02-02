@@ -6,6 +6,8 @@ import getopt
 import socket
 import sys
 
+import crypt as cr
+
 target = ''
 port = 0
 
@@ -29,6 +31,7 @@ def main():
     parser.add_argument('-p', '--port', dest='port',  type=int, action='store', help='port number')
     parser.add_argument('-t', '--target', type=str, help='target hostname or IP address')
     parser.add_argument('-c', '--command', dest='command', type=str)
+    parser.add_argument('-st', '--string', dest='string', type=str)
     parser.add_argument('-v', '--version', action='version', version='Version 1.0.0',help='show version')
 
     args = parser.parse_args()
@@ -36,7 +39,10 @@ def main():
     if args.command == 'list':
         port_check_list(args.target)
 
-    
+    if args.command == 'encmd5':
+        print cr.md5_encrypt(args.string)
+
+
     #print("HOGE")
 
 
