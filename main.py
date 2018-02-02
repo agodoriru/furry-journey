@@ -28,21 +28,15 @@ def main():
 
     parser.add_argument('-p', '--port', dest='port',  type=int, action='store', help='port number')
     parser.add_argument('-t', '--target', type=str, help='target hostname or IP address')
-    # parser.add_argument('command')
+    parser.add_argument('-c', '--command', dest='command', type=str)
     parser.add_argument('-v', '--version', action='version', version='Version 1.0.0',help='show version')
 
     args = parser.parse_args()
 
-
-
-    if args.port == 1:
+    if args.command == 'list':
         port_check_list(args.target)
 
-    if args.port != 0:
-        port_check(args.target, args.port)
-
-
-
+    
     #print("HOGE")
 
 
@@ -62,9 +56,11 @@ def port_check(target, port):
 
 # arg start_port end_port target_host
 def port_check_list(target):
-    print("[*] target : %s" % target)
+    print("***********************************")
+    print("         [*]target : %s        " % target)
+    print("***********************************")
     start_port=0
-    end_port=5432
+    end_port=56635
 
     for i in range(start_port, end_port+1):
         #port_check_flag=0
