@@ -7,6 +7,7 @@ import socket
 import sys
 
 import crypt as cr
+import radix_translation as rad_trans
 
 target = ''
 port = 0
@@ -31,8 +32,9 @@ def main():
     parser.add_argument('-p', '--port', dest='port',  type=int, action='store', help='port number')
     parser.add_argument('-t', '--target', type=str, help='target hostname or IP address')
     parser.add_argument('-c', '--command', dest='command', type=str)
+    parser.add_argument('-n', '--number', dest='number', type=int)
     parser.add_argument('-st', '--string', dest='string', type=str)
-    parser.add_argument('-v', '--version', action='version', version='Version 1.0.0',help='show version')
+    parser.add_argument('-v', '--version', action='version', version='Version 1.0.0', help='show version')
 
     args = parser.parse_args()
 
@@ -41,6 +43,9 @@ def main():
 
     if args.command == 'encmd5':
         print cr.md5_encrypt(args.string)
+
+    if args.command == '10to2':
+        rad_trans.from10to2(args.number)
 
 
     #print("HOGE")
