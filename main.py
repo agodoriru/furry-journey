@@ -8,6 +8,7 @@ import sys
 
 import crypt as cr
 import radix_translation as rad_trans
+import IP_translation as IP
 
 target = ''
 port = 0
@@ -46,6 +47,9 @@ def main():
 
     if args.command == '10to2':
         rad_trans.from10to2(args.number)
+
+    if args.command == 'IP':
+        IP.IP_translation()
 
 
     #print("HOGE")
