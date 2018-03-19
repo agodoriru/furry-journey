@@ -6,5 +6,5 @@ def from10to2(x):
 
     x = bin(x)
 
-    print x
+    print(x)
 

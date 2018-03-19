@@ -7,6 +7,8 @@ def md5_encrypt(x):
 
     MD5 = (hashlib.md5(x).hexdigest())
 
+    print(MD5)
+
     os.remove("./crypt.pyc")
 
     return MD5

@@ -41,8 +41,8 @@ def main():
     if args.command == 'list':
         port_check_list(args.target)
 
-    if args.command == 'encmd5':
-        print cr.md5_encrypt(args.string)
+    if args.command == 'enc':
+        cr.md5_encrypt(args.string)
 
     if args.command == '10to2':
         rad_trans.from10to2(args.number)
