@@ -47,6 +47,9 @@ def main():
     if args.command == '10to2':
         rad_trans.from10to2(args.number)
 
+    if args.command == None:
+        port_check(args.target,args.port)
+
 
     #print("HOGE")
 
